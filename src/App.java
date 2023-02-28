@@ -30,6 +30,22 @@ public class App {
         System.out.println("Precio final: " + hp.precioFinalTele());
 
         ejec.setElectrodomestico();
-        System.out.println(ejec.getElectrodomesticos()[1].getColor());
+
+        double precioFinalElectrodomesticos = 0;
+        double precioFinalLavadora = 0;
+        double precioFinalTelevision = 0;
+        System.out.println("-> " + ejec.getElectrodomesticos()[1].precioFinal());
+        for(int i = 0; i < ejec.getElectrodomesticos().length; i++){
+            if(ejec.getElectrodomesticos()[i] instanceof Lavadora){
+                precioFinalElectrodomesticos = precioFinalElectrodomesticos + ejec.getElectrodomesticos()[i].precioFinal();
+                precioFinalLavadora = precioFinalLavadora + ejec.getElectrodomesticos()[i].precioFinal();
+            } else if(ejec.getElectrodomesticos()[i] instanceof Television){
+                precioFinalElectrodomesticos = precioFinalElectrodomesticos + ejec.getElectrodomesticos()[i].precioFinal();
+                precioFinalTelevision = precioFinalTelevision + ejec.getElectrodomesticos()[i].precioFinal();
+            }
+        }
+        System.out.println("Precio final de los electrodomésticos: " + precioFinalElectrodomesticos);
+        System.out.println("Precio final de las lavadoras: " + precioFinalLavadora);
+        System.out.println("Precio final de las televisiones: " + precioFinalTelevision);
     }
 }
