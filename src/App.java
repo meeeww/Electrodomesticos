@@ -1,5 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
+        Ejecutable ejec = new Ejecutable();
+
         Electrodomesticos nevera = new Electrodomesticos(50.5, "Negro", 'B', 5.5);
 
         System.out.println("Consumo: " + nevera.comprobarConsumoEnergetico());
@@ -26,5 +28,8 @@ public class App {
         System.out.println("Precio base: " + hp.getPrecio());
         System.out.println("Peso: " + hp.getPeso());
         System.out.println("Precio final: " + hp.precioFinalTele());
+
+        ejec.setElectrodomestico();
+        System.out.println(ejec.getElectrodomesticos()[1].getColor());
     }
 }
